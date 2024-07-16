@@ -33,6 +33,7 @@ class Stack:
             print("Stack Elements are: ")
             for i in range(0, len(self.stack)):
                 print(self.stack[i], end = ", ")
+                
 # Main Function
 size = int(input("Enter the size of the stack: "))
 stack = Stack(size)
