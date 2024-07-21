@@ -81,6 +81,43 @@ class LinkedList:
         previous.next = current.next
         return "Node deleted"
 
+    def findMiddleUsingTwoPointers(self):
+        if self.head is None:
+            return "List is empty"
+        
+        slow = self.head
+        fast = self.head 
+        
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+        
+        return slow.data
+    
+    
+    def findMiddleUsingTwoPass(self):
+        if self.head is None:
+            return "List Is Empty!"
+        
+        length = 0
+        current = self.head
+        
+        #First Pass: Count the nodes
+        while current is not None:
+            length += 1
+            current = current.next
+            
+        #Second Pass: Move to the middle
+        middle_element = length // 2
+        current  = self.head
+        for i in range(middle_element):
+            current = current.next
+            
+        return current.data
+        
+    def mergeSortedList(self,list1,list2):
+        pass
+        
 def createLinkedListWithoutUserInput():
     linked_list = LinkedList()
     for i in range(1,6):
@@ -105,19 +142,3 @@ if __name__ == "__main__":
     print("Creating a linked list without user input:")
     ll_without_input = createLinkedListWithoutUserInput()
     ll_without_input.display()
-    
-    print("\nReversing the linked list:")
-    ll_without_input.reverse()
-    ll_without_input.display()
-    
-     # Using the deleteNode function
-    value_to_delete = 3
-    print(f"\nDeleting node with value: {value_to_delete}")
-    print(ll_without_input.deleteNode(value_to_delete))
-    ll_without_input.display()
-    
-    # Trying to delete a node that doesn't exist
-    # value_to_delete = 10
-    # print(f"\nTrying to delete node with value {value_to_delete}:")
-    # print(ll_without_input.deleteNode(value_to_delete))
-    # ll_without_input.display()
