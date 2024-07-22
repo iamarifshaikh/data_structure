@@ -93,8 +93,7 @@ class LinkedList:
             fast = fast.next.next
         
         return slow.data
-    
-    
+        
     def findMiddleUsingTwoPass(self):
         if self.head is None:
             return "List Is Empty!"
@@ -115,9 +114,27 @@ class LinkedList:
             
         return current.data
         
-    def mergeSortedList(self,list1,list2):
-        pass
+def mergeSortedList(list1,list2):
+        start = Node(0)
+        current = start
         
+        while list1 is not None and list2 is not None:
+            if list1.data <= list2.data:
+                current.next = list1
+                list1 = list1.next
+            else:
+                current.next = list2
+                list2 = list2.next
+            current = current.next
+            
+             # If one list is exhausted, append the remainder of the other list
+        if list1:
+            current.next = list1
+        if list2:
+            current.next = list2
+        
+        return start.next  # Return the actual head of the merged list
+
 def createLinkedListWithoutUserInput():
     linked_list = LinkedList()
     for i in range(1,6):
@@ -138,7 +155,32 @@ def createLinkedListWithUserInput():
         linked_list.addToNode(data)
     return linked_list
     
+    # Helper function to create a sorted linked list from a list of values
+def create_sorted_linked_list(values):
+    ll = LinkedList()
+    for value in sorted(values):
+        ll.addToNode(value)
+    return ll
+    
 if __name__ == "__main__":
+    list1 = create_sorted_linked_list([1, 3, 5])
+    list2 = create_sorted_linked_list([2, 4, 6, 8, 10])
+    
+    print("List 1:")
+    list1.display()
+    print("List 2:")
+    list2.display()
+
+    # Merge the lists
+    merged_head = mergeSortedList(list1.head, list2.head)
+
+    # Create a new LinkedList object with the merged head
+    merged_list = LinkedList()
+    merged_list.head = merged_head
+    
+    print("Merged list:")
+    merged_list.display()
+    
     print("Creating a linked list without user input:")
     ll_without_input = createLinkedListWithoutUserInput()
     ll_without_input.display()
