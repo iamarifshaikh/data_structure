@@ -113,6 +113,21 @@ class LinkedList:
             current = current.next
             
         return current.data
+    
+    
+    def hasCycle(self):
+        if self.head is None and self.head.next is None:
+            return False
+        
+        slow = self.head
+        fast = self.head.next
+        
+        while slow!=fast:
+            if fast is None or fast.next is None:
+                return False
+            slow = slow.next
+            fast = fast.next.next
+        return True
         
 def mergeSortedList(list1,list2):
         start = Node(0)
