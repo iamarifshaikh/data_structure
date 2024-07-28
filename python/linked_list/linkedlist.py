@@ -80,7 +80,64 @@ class LinkedList:
             
         previous.next = current.next
         return "Node deleted"
-
+    
+    def deleteMiddleNodeUsingTwoPointer(self):
+        if self.head is None:
+            return "The List Is Empty"  
+        
+        if self.head.next is None:
+            self.head = None
+            return "The list had only one node and it was deleted"
+        
+        slow = self.head
+        fast = self.head
+        previous = None  # To keep track of the node before slow
+        
+        while fast is not None and fast.next is not None:
+            previous = slow
+            slow = slow.next
+            fast = fast.next.next
+            
+        # `slow` is now pointing to the middle node
+        # `previous` is pointing to the node before the middle node
+        
+        if previous is not None:
+            previous.next = slow.next
+        
+        return self.head
+    
+    def deleteMiddleNodeUsingTwoPass(self):
+        if self.head is None:
+            return "The List Is Empty"
+    
+        if self.head.next is None:
+            self.head = None
+            return "The list had only one node and it was deleted"
+        
+        current = self.head
+        n = 0
+        
+        # First Pass: Count the total number of nodes in a linked list
+        while current is not None:
+            n += 1
+            current = current.next
+        
+        #Calculate the middle index
+        middle = n // 2
+        
+        #Second Pass: Find the node just before the middle node
+        current = self.head
+        previous = None    
+        
+        for i in range(middle):
+            previous = current
+            current = current.next
+        
+        # Delete the middle node
+        previous.next = current.next
+        
+        return self.head
+        
     def findMiddleUsingTwoPointers(self):
         if self.head is None:
             return "List is empty"
@@ -113,7 +170,6 @@ class LinkedList:
             current = current.next
             
         return current.data
-    
     
     def hasCycle(self):
         if self.head is None and self.head.next is None:
@@ -178,24 +234,11 @@ def create_sorted_linked_list(values):
     return ll
     
 if __name__ == "__main__":
-    list1 = create_sorted_linked_list([1, 3, 5])
-    list2 = create_sorted_linked_list([2, 4, 6, 8, 10])
-    
-    print("List 1:")
-    list1.display()
-    print("List 2:")
-    list2.display()
-
-    # Merge the lists
-    merged_head = mergeSortedList(list1.head, list2.head)
-
-    # Create a new LinkedList object with the merged head
-    merged_list = LinkedList()
-    merged_list.head = merged_head
-    
-    print("Merged list:")
-    merged_list.display()
-    
     print("Creating a linked list without user input:")
     ll_without_input = createLinkedListWithoutUserInput()
+    ll_without_input.display()
+    middle = ll_without_input.findMiddleUsingTwoPass()
+    print(f"Middle element: {middle}")
+    
+    ll_without_input.deleteMiddleNodeUsingTwoPointer()
     ll_without_input.display()
