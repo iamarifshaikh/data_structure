@@ -9,7 +9,7 @@ class Queue:
         return self.front == -1 and self.rear == -1
     
     def isFull(self):
-        return self.rear == self.size - 1
+        return self.rear ==  self.size - 1
     
     def enqueue(self,value):
         if self.isFull():
