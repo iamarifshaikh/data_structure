@@ -36,7 +36,7 @@ def pyramid_star(N):
         for l in range(N - i - 1): # Print trailing spaces (although it's unnecessary as the trailing spaces are not actually needed)
             print("" ,end="")
         
-        print()
+        print() # Move to the next line after each row
         
 if __name__ == "__main__":
     N = 5

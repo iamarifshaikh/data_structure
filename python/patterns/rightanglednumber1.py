@@ -6,4 +6,4 @@ def right_angled_number_1(N):
 
 if __name__ == "__main__":
     N = 10
-    right_angled_number(N)
+    right_angled_number_1(N)
