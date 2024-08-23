@@ -31,7 +31,7 @@ class Stack:
             print("Stack Is Empty!")
         else:
             print("Stack Elements are: ")
-            for i in range(0, len(self.stack)):
+            for i in range(0, len(self.stack)):                                     
                 print(self.stack[i], end = ", ")
                 
 # Main Function
