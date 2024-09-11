@@ -6,7 +6,7 @@ def lowerBound(n,x,array):
 
 if __name__ == "__main__":
     array = [3, 5, 8, 15, 19]
-    n = 5
+    n = len(array)
     x = 9
     ans = lowerBound(n,x,array)
     print("The lower bound is the index: ", ans)

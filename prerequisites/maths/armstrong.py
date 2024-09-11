@@ -10,8 +10,7 @@ def isArmstrong(number):
         sum += last_digit ** digits
         n = n // 10
         
-    # Check if the sum of digits raised to
-    # the power of k equals the original number
+    # Check if the sum of digits raised to the power of k equals the original number
     return sum == number
     
 if __name__ == "__main__":

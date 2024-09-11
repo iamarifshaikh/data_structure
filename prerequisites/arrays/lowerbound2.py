@@ -16,8 +16,8 @@ def lower_bound(x,n,array):
  
 
 if __name__ == "__main__":
-    x = 30
-    n = 6
     array = [15,28,35,65,75,100]
+    n = len(array)
+    x = 30
     ans = lower_bound(x,n,array)
     print("The lower bound is: ",ans)
