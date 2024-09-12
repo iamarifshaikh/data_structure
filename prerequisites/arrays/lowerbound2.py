@@ -13,7 +13,6 @@ def lower_bound(x,n,array):
             low = middle + 1  # look on the right
 
     return answer
- 
 
 if __name__ == "__main__":
     array = [15,28,35,65,75,100]
