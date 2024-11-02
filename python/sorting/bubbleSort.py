@@ -9,10 +9,13 @@ def bubbleSort(array):
         for j in range(0, length - i - 1):
 
             if array[j] > array[j+1]:
+                # Swapping Using temporary variable
                 temp = array[j]
                 array[j] = array[j+1]
                 array[j+1] = temp
 
+                # Swapping Using Simultaneous Assignment
+                # (array[j], array[j+1]) = (array[j+1],array[j])
             swapped = True
     
         if not swapped:
