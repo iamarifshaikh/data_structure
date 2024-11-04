@@ -18,8 +18,8 @@ def selectionSort(array):
     
 
 if __name__ == "__main__":
-    print("Before Sorting: ")
     array = [24,35,82,-3,-9,14]
+    print("Before Sorting: ")
     print(array)
     selectionSort(array)
     print("After Sorting: ")
