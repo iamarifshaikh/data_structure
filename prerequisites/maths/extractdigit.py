@@ -17,4 +17,3 @@ if __name__ == "__main__":
     for num in digits:
         print(num, end=",")
     print()
-    

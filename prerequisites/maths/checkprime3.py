@@ -12,7 +12,6 @@ def seiveOfEratosthenes(number):
     primes = [ i for i in range (number + 1) if is_prime[i]]
     return primes
         
-
 if __name__ == "__main__":
     number = int(input("Enter The N number to find the prime number till: "))
     print(f"Prime Numbers Up To {number}: {seiveOfEratosthenes(number)}")

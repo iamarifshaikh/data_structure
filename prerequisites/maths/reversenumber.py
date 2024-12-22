@@ -1,13 +1,13 @@
 def reverse_number(n):
-    reverseNum = 0
+    # reverseNum = 0
     
-    while n > 0:
-        last_digit = n % 10
-        reverseNum = (reverseNum * 10) + last_digit
+    # while n > 0:
+    #     last_digit = n % 10
+    #     reverseNum = (reverseNum * 10) + last_digit
         
-        n = n // 10
+    #     n = n // 10
         
-    return reverseNum
+    return str(n)[::-1]
 
 if __name__ == "__main__":
     n = int(input("Enter an integer: "))

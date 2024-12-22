@@ -11,8 +11,8 @@ class SimpleMap:
             
              # If the key doesn't exist, append a new key-value pair
         self.data.append((key,value))
-
     def get(self,key):
+
         for k,v in self.data:
             if k == key:
                 return v # return the value associate to the key
