@@ -1,3 +1,5 @@
+from collections import deque
+
 class Node:
     """
     Represents a node in the Binary Search Tree.
@@ -28,7 +30,7 @@ class BinaryTree:
             if node.left is None:
                 node.left = Node(data)
             else:
-                self._insert_recursively(node.left,data)                
+                self._insert_recursively(node.left,data)
         elif data > node.data: # Larger values go to the right
             if node.right is None:
                 node.right = Node(data)
@@ -61,13 +63,13 @@ class BinaryTree:
         return result
 
     def _inorder_traversal(self,node,result):
-        """Recursive helper function for inorder traversal."""    
+        """Recursive helper function for inorder traversal."""
         if node is not None:
             self._inorder_traversal(node.left,result)
             result.append(node.data) # Visit the node
             print(node.data, end=" ")
             self._inorder_traversal(node.right,result)
-            
+
     def preorder(self):
         """Public method to initiate preorder traversal and return the result."""
         result = []
@@ -83,7 +85,7 @@ class BinaryTree:
             self._preorder_traversal(node.right,result)
 
     def postorder(self):
-        """Public method to initiate postorder traversal and return the result."""    
+        """Public method to initiate postorder traversal and return the result."""
         result = []
         self._postorder_traversal(self.root,result)
         return result
@@ -96,6 +98,34 @@ class BinaryTree:
             result.append(node.data) # Visit the node
             print(node.data, end=" ")
 
+    def level_order_traversal(self):
+        """Public function to perform level-order traversal and group by levels"""
+        if self.root is None:
+            return []
+        return self._level_order_traversal(self.root)
+
+    def _level_order_traversal(self, start_node):
+        """Actual function performing level-order traversal grouped by levels"""
+        result = []
+        queue = deque([start_node])  # Start with the initial node
+        
+        while queue:
+            level_size = len(queue)  # Number of nodes at the current level
+            level = []  # List to store the current level's values
+            
+            for _ in range(level_size):
+                current = queue.popleft()
+                level.append(current.data)
+                
+                if current.left:
+                    queue.append(current.left)
+                if current.right:
+                    queue.append(current.right)
+            
+            result.append(level)  # Add the level to the final result
+        
+        return result
+
 if __name__ == "__main__":
     # Initialize a binary search tree
     bst = BinaryTree()
@@ -106,7 +136,7 @@ if __name__ == "__main__":
     bst.insert(15)
     bst.insert(3)
     bst.insert(7)
-    bst.insert(18)        
+    bst.insert(18)
     bst.insert(12)
 
     print("Postorder Traversals: ")
@@ -115,3 +145,5 @@ if __name__ == "__main__":
     bst.preorder()
     print("\nInorder Traversals: ")
     bst.inorder()
+    print("\nLevel Order Traversal: ")
+    print(bst.level_order_traversal())

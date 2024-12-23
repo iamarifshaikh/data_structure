@@ -12,7 +12,7 @@ class LinkedList:
         if not self.head: 
             self.head = new_node
             return
-        current = self.head
+        current  = self.head
         while current.next is not None:
             current = current.next
         current.next = new_node
