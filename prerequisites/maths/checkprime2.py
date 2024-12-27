@@ -18,8 +18,7 @@ def check_prime(num):
     # If the number of factors is not 2
     else:
         # Return false, indicating that the number is not prime.
-        return False
-        
+        return False        
 
 if __name__ == "__main__":
     num = int(input("Enter the number: "))

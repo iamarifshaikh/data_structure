@@ -21,7 +21,7 @@ class BinaryTree:
         Otherwise, it inserts the value in the appropriate position.
         """
         if self.root is None:
-            self.root = Node(data)
+            self.root = Node(data)  
         else:
             self._insert_recursively(self.root,data)
 
@@ -54,7 +54,7 @@ class BinaryTree:
         elif data < node.data:
             return self._search_recursively(node.left,data) # Search Left Sub Tree
         else:
-            return self._search_recursively(node.right,data) # Search Right Sub Tree
+                return self._search_recursively(node.right,data) # Search Right Sub Tree
 
     def inorder(self):
         """Public method to initiate inorder traversal and return the result."""
