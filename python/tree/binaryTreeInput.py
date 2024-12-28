@@ -1,3 +1,5 @@
+from collections import deque
+
 class Node:
     """
     Represet a node in the binary search tree.
@@ -103,9 +105,32 @@ class BinaryTree:
             result.append(node.data)
             print(node.data,end=" ")
     
-    def level_order_traversal(self):
-        pass
+    def level_order_traversal(self,root):
+        if self.root is None:
+            return []
+        
+        result = []
 
+        queue = deque([self.root])
+
+        while queue:
+            level_size = len(queue)
+            level = []
+
+            for _ in range(level_size):
+                current = queue.popleft()
+                level.append(current)
+
+                if current.left is not None:
+                    queue.append(current.left)
+
+                if current.right is not None:
+                    queue.append(current.right)
+
+            result.append(level)
+
+        return result
+    
 def main():
     bst  = BinaryTree()
 
