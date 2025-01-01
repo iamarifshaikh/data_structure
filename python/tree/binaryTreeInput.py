@@ -131,6 +131,7 @@ class BinaryTree:
 
         return result
     
+    # In finding floor we find the value of the largest node in the BST that is smaller or equal to the key 
     def find_floor(self,root,key):
         if root is None:
             return
@@ -152,6 +153,25 @@ class BinaryTree:
 
         # Return the computed floor value
         return floor
+
+    # In ceiling we find the value of smallest in BST that is greater than or equal to the key
+    def finding_ceil(self,root,key):
+        if root is None:
+            return
+        
+        ceil = -1
+
+        while root:
+            if root.data == key:
+                ceil = root.data
+                return ceil
+            elif key > root.data:
+                root = root.right
+            else:
+                ceil = root.data
+                root = root.left
+            
+        return ceil
 
 def main():
     bst  = BinaryTree()
@@ -188,9 +208,16 @@ def main():
            key = int(input("\nEnter the key number: "))
            floor_value = bst.find_floor(bst.root, key)
            if floor_value is not None:
-                print(f"The floor value for the {key} is {floor_value}")
+                print(f" In the given BST, the largest value smaller or equal to {key} is {floor_value}")
            else:
                 print(f"No floor exists for {key} in the tree.")
+        elif choice == 9:
+            key = int(input("\nEnter the key number: "))
+            ceil_value = bst.finding_ceil(bst.root,key)
+            if ceil_value is not None:
+                print(f" In the given BST, the smallest value greater or equal to {key} is {ceil_value}")
+            else:
+                print(f"No ceil exists for {key} in the tree.")
         else:
             print("Exiting Program!")
             break
