@@ -131,11 +131,33 @@ class BinaryTree:
 
         return result
     
+    def find_floor(self,root,key):
+        if root is None:
+            return
+        
+        floor = -1
+        # Here root (parameter/variable): A temporary reference to the current node being processed.
+        # It starts as self.root in most cases but changes context as you move through the tree (either left or right).
+        while root:
+            if root.data == key:
+                floor = root.data
+                return floor
+            elif key > root.data:
+                # Update the floor with the current node's value and move to the right subtree
+                floor = root.data
+                root = root.right
+            else:
+                # If the key is smaller than the current's node value then move to the left subtree
+                root = root.left
+
+        # Return the computed floor value
+        return floor
+
 def main():
     bst  = BinaryTree()
 
     while True:
-        print("\n\t 1.INSERT\n\t 2.SEARCH\n\t 3.DELETE\n\t 4.INORDER TRAVERSAL\n\t 5.PRE-ORDER TRAVERSAL \n\t 6.POST-ORDER TRAVERSAL \n\t 7.LEVEL ORDER TRAVERSAL")
+        print("\n\t 1.INSERT\n\t 2.SEARCH\n\t 3.DELETE\n\t 4.INORDER TRAVERSAL\n\t 5.PRE-ORDER TRAVERSAL \n\t 6.POST-ORDER TRAVERSAL \n\t 7.LEVEL ORDER TRAVERSAL \n\t 8. FIND YOUR FLOOR VALUE")
         choice = int(input("Enter your choice: "))
 
         if choice == 1:
@@ -162,6 +184,13 @@ def main():
         elif choice == 7:
             print("\Level Order Traversals: ")
             bst.level_order_traversal()
+        elif choice == 8:
+           key = int(input("\nEnter the key number: "))
+           floor_value = bst.find_floor(bst.root, key)
+           if floor_value is not None:
+                print(f"The floor value for the {key} is {floor_value}")
+           else:
+                print(f"No floor exists for {key} in the tree.")
         else:
             print("Exiting Program!")
             break

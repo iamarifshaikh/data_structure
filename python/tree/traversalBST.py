@@ -1,5 +1,4 @@
 from collections import deque
-from typing import list
 
 class Node:
     def __init__(self,data):
@@ -87,10 +86,25 @@ class BinarySearchTree:
         return preorder
 
     def iterative_inorder_traversal(self,root):
-        inorder = []
+        result = []
+        stack = []
+        current = root
 
         if root is None:
-            return inorder
+            return stack
+
+        while current is not None or stack is not None:
+            
+            while current:
+                stack.append(current)
+                current = current.left
+
+            current = stack.pop()
+            result.append(current)
+
+            current = current.right
+        
+        return result
 
     def iterative_postorder_traversal(self):
         pass
