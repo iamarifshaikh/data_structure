@@ -1,4 +1,5 @@
 from typing import List
+
 def largestElement(array:List[int]) -> int:
     array.sort()
     return array[-1]

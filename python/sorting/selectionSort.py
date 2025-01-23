@@ -1,5 +1,4 @@
-def selectionSort(array):
-    
+def selectionSort(array):    
     length = len(array)
 
     for i in range(length):
@@ -16,7 +15,6 @@ def selectionSort(array):
         # Swapping The Values By Creating The Tuples
         # (array[i], array[minimum_index]) = (array[minimum_index], array[i])
     
-
 if __name__ == "__main__":
     array = [24,35,82,-3,-9,14]
     print("Before Sorting: ")

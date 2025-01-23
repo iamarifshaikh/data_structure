@@ -8,7 +8,6 @@ def largestElement(length,array):
             
     return max
         
-
 if __name__ == '__main__':
     array = [50,12,43,12,67,8,3,88]
     length = len(array)
