@@ -1,6 +1,7 @@
 class GraphMatrix:
     def __init__(self,vertices):
         self.vertices = vertices
+        
         # Initialize N x N matrix with all values set to 0
         self.matrix = [[0 for _ in range (vertices)]for _ in range (vertices)]
 
@@ -10,10 +11,8 @@ class GraphMatrix:
             self.matrix[node2][node1] = 1  # For undirected graphs
 
     def display(self):
-        """
-        Step 3: Display the adjacency matrix.
-        Print the matrix row by row.
-        """
         print("Adjacency Matrix:")
         for row in self.matrix:
             print(row)
+            
+    
