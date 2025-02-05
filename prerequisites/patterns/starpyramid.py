@@ -31,8 +31,7 @@ def pyramid_star(N):
             print(" ", end="")
         
         for k in range(2 * i + 1):
-            print("*", end="")
-            
+            print("*", end="")            
         for l in range(N - i - 1): # Print trailing spaces (although it's unnecessary as the trailing spaces are not actually needed)
             print("" ,end="")
         

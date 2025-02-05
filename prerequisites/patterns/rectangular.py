@@ -1,7 +1,8 @@
 def rectangular_star_pattern(N):
     for i in range(N):
         for j in range(N):
-            print("* ",end="")
+            else:
+                print("x ",end=" ")
         print() # Move to the next line
     
 if __name__ == "__main__":
