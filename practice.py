@@ -17,7 +17,6 @@
 # array.append(44.22)
 # print(len(array))
 
-
 # array =[4,5,6]
 
 # array.extend("hI")
@@ -38,7 +37,6 @@
 # array = [4, 5, 6,7,8]
 # array.insert(20,200)
 # print(array)
-
 
 # array = [4, 5, 6, 7,8]
 # array.remove(17)
@@ -169,15 +167,184 @@
 #     for j in range(j+1):
 #         pass
 
-number = int(input())
-count = 0
-while number:
-    last_digit = number % 10
-    for i in range(2, (last_digit ** 0.5)+ 1):
-        if (last_digit%i==0):
-            count = count + 1
-        else:
-            print(f"{i} is not a prime")
-    number = number // 10
+# number = int(input())
+# count = 0
+# while number:
+#     last_digit = number % 10
+#     for i in range(2, (last_digit ** 0.5)+ 1):
+#         if (last_digit%i==0):
+#             count = count + 1
+#         else:
+#             print(f"{i} is not a prime")
+#     number = number // 10
+
+# print(count)
+
+
+# class aiml:
+#     def qwe(self):
+#         print("hi")
+
+# class eee:
+#     def qwe(self):
+#         print("hellp")
+
+# class cse(eee,aiml):
+#     def qwe1(self):
+#         print("hey")
+
+# a = aiml()
+# b = eee()
+# c = cse()
+
+# c.qwe()
+
+
+# class aiml:
+#     def __init__(self,u,v):
+#         self.x = 10
+#         self.y=v
+#     def qwe(self,x):
+#         print("hi",self.x+b.y)
+
+# a = aiml(10,20)
+# b = aiml(30,60)
+# a.qwe()
+# b.qwe()
+
+
+# class aiml:
+#     def __init__(self,u,v):
+#         self.x = u
+#         self.y=v
+#     def qwe(self,t):
+#         print("hi",self.x+b.y,t)
+
+# a = aiml(10,20)
+# b = aiml(30,60)
+# a.qwe(50)
+# b.qwe(40)
+
+
+# class Node:
+#     def __init__(self,data):
+#         self.data = data
+#         self.next = None
+
+# def display():
+#     temporary = head
+#     while temporary is not None:
+#         print(temporary.data)
+#         temporary = temporary.next
+#     print()
+
+"""
+def sumOfLinkedList():
+    temporary = head
+    sum = 0
+    while temporary is not None:
+        sum += temporary.data
+        temporary = temporary.next
+    print(f"The sum of all the node data is {sum}")
+"""
+# def sumOfOdd():
+#     temporary = head
+#     sum = 0
+#     while temporary is not None:
+#         if temporary.data % 2 != 0:
+#             sum += temporary.data
+#         temporary = temporary.next
+#     print(f"The sum of all the odd data is {sum}")
+
+# def findMiddleOfNode():
+#     fast = slow = head
+
+#     while fast!= None and fast.next!=None:
+#         slow = slow.next
+#         fast = fast.next.next
     
-print(count)
+#     print(slow.data)
+
+# def evenOrOdd():
+    # temporary = head
+    # count = 0
+    # while temporary!=None:
+    #     temporary = temporary.next
+    #     count += 1
+    # print("It is even" if count%2==0 else "It is odd") 
+    
+    # fast = head
+    # while fast is not None and fast.next is not None:
+    #     fast= fast.next.next
+    # print("It is even" if fast == 0 else "It is Odd")
+
+# head  = Node(10)
+# head.next = Node(20)
+# head.next.next = Node(30)
+# head.next.next.next = Node(40)
+# head.next.next.next.next = Node(50)
+# head.next.next.next.next.next = Node(60)
+# display()
+# sumOfLinkedList()
+# sumOfOdd()
+# findMiddleOfNode()
+# evenOrOdd()
+
+# class node:
+#     def __init__(self, u):
+#         self.data = u
+#         self.next = None
+
+
+# def display():
+#     t = head
+#     while t != None:
+#         print(t.data, end=" ")
+#         t = t.next
+
+
+# def reverse(x):
+#     p = None
+#     c = x
+#     while c != None:
+#         n = c.next
+#         c.next = p
+#         p = c
+#         c = n
+#     return p
+
+
+# def nthnode(n):
+#     f = head
+#     s = head
+#     while n:
+#         f = f.next
+#         n = n - 1
+#     while f != None:
+#         t = s
+#         s = s.next
+#         f = f.next
+#     print(s.data)
+#     t.next = reverse(s)
+
+
+# def add_back(x):
+#     t = head
+#     while t.next != None:
+#         t = t.next
+#     t.next = node(x)
+
+
+# head = node(10)
+# add_back(20)
+# add_back(30)
+# add_back(40)
+# add_back(50)
+# add_back(60)
+# add_back(70)
+# add_back(80)
+# add_back(90)
+# display()
+# print()
+# nthnode(5)
+# display()
