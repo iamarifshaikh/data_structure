@@ -83,5 +83,5 @@ print("name" in person2)
 print("age" in person)
 
 # 🔟 Dictionary Comprehension (Advanced)
-squares = {x: x ** 3 for x in range(1,6)}
+squares = {x: x ** 1 for x in range(1,6)}
 print(squares)

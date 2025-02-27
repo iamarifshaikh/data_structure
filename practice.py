@@ -262,21 +262,21 @@ def sumOfLinkedList():
 #     while fast!= None and fast.next!=None:
 #         slow = slow.next
 #         fast = fast.next.next
-    
+
 #     print(slow.data)
 
 # def evenOrOdd():
-    # temporary = head
-    # count = 0
-    # while temporary!=None:
-    #     temporary = temporary.next
-    #     count += 1
-    # print("It is even" if count%2==0 else "It is odd") 
-    
-    # fast = head
-    # while fast is not None and fast.next is not None:
-    #     fast= fast.next.next
-    # print("It is even" if fast == 0 else "It is Odd")
+# temporary = head
+# count = 0
+# while temporary!=None:
+#     temporary = temporary.next
+#     count += 1
+# print("It is even" if count%2==0 else "It is odd")
+
+# fast = head
+# while fast is not None and fast.next is not None:
+#     fast= fast.next.next
+# print("It is even" if fast == 0 else "It is Odd")
 
 # head  = Node(10)
 # head.next = Node(20)
@@ -348,3 +348,24 @@ def sumOfLinkedList():
 # print()
 # nthnode(5)
 # display()
+# def removeElements():
+#     nums = [0, 1, 2, 2, 3, 0, 4, 2]
+#     value = 2
+#     index = 0
+#     for i in nums:
+#             if i != value:
+#                 nums[index] = i
+#                 index += 1
+#     return index
+
+# removeElements()
+
+
+def wrap(n, min_val, max_val):
+    return (n - min_val) % (max_val - min_val + 1) + min_val
+
+# Testing the function
+print(wrap(6, 1, 5))  # Output: 1
+print(wrap(7, 1, 5))  # Output: 2
+print(wrap(0, 1, 5))  # Output: 5
+print(wrap(-1, 1, 5))  # Output: 4

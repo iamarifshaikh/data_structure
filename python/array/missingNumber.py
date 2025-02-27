@@ -1,10 +1,19 @@
 def findMissingNumber():
     array = [1,2,4,5,6,7,8]
     N = 8
-    for i in range(1,N+1):
-        if i not in array:
-            print(i)
-            break
+    
+    hashmap = {}
+    for i in array:
+        hashmap[i] = hashmap.get(i,0) + 1
+
+    print(hashmap)
+    
+    
+    
+    # for i in range(1,N+1):
+    #     if i not in array:
+    #         print(i)
+    #         break
     # for i in range(len(array)):
     #     num = i  + 1
     #     if array[i] != num:
